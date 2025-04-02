@@ -31,13 +31,13 @@
 5. **Set environment variables**:
    Add the following environment variables (replace `put_secret_key_here` with your actual secret keys):
    ```powershell
-   $env:VSCODE_DOM="put_secret_key_here"
-   $env:VSCODE_SK_="put_secret_key_here"
+   $env:VSCODE_DOM="put_secret_key_here" (1)
+   $env:VSCODE_SK_='put_secret_key_here' (2)
    ```
    Example values:
    ```
-   CajnoXYH-sBaXYYlgznRUfGolxVklLR-GpebSEUSnkg=
-   _5#y2L"F4Q8z\n\xec]/
+   CajnoXYH-sBaXYYlgznRUfGolxVklLR-GpebSEUSnkg= (1)
+   _5#y2L"F4Q8z\n\xec]/ (2)
    ```
 
 6. **View all environment variables** (optional):
@@ -54,7 +54,7 @@
    pip install bcrypt
    pip install cryptography
    pip install Flask-WTF
-   pip install requests
+   pip install Flask-Limiter
    pip install pytest
    ```
 
