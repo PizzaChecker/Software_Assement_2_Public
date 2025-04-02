@@ -39,8 +39,8 @@ def session_check_admin():
         if not session.get("Admin"): # If the user is not an admin
             if session.get("Username_Login"): # If the user is logged in but not an admin
                 return redirect(url_for("user_dashboard"))
-            flash("Access is forbidden!")
-            flash("Please login, to access the dashboard")
+            flash("Access is forbidden!", "warning")
+            flash("Please login, to access the dashboard", "warning")
             return redirect(url_for("login")) # Redirect to login page
         
         # Update admin last activity time

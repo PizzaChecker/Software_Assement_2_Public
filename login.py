@@ -63,6 +63,8 @@ def form_login():
                 if privilege_id == 2:
                     session['Admin'] = False  # Not fully authenticated yet
                     session['pending_admin'] = True
+                    user_info = data_handler.get_pfp_info(username)
+                    session['profile_image'] = user_info  # Store the image filename in the session
                     # Generate 6-digit PIN and store hashed version with timestamp
                     admin_pin = ''.join([str(random.randint(0, 9)) for _ in range(6)]) # Generate a random 6-digit PIN
                     pin_expiry = time.time() + 120  # 2 minute expiry
@@ -81,7 +83,7 @@ def form_login():
                 return redirect(url_for('login'))  # Redirect back to the login page
 
             # Retrieve the user's profile image filename from the database
-            user_info = data_handler.get_pfp_info(username)  # Implement this function to get user info
+            user_info = data_handler.get_pfp_info(username)
             
             if not user_info:
                 logging.error(f"No profile image found for user {username}")
