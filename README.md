@@ -54,7 +54,7 @@
    pip install bcrypt
    pip install cryptography
    pip install Flask-WTF
-   pip install requests
+   pip install Flask-Limiter
    pip install pytest
    ```
 
