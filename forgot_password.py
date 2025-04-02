@@ -140,7 +140,7 @@ def reset_security_questions():
         flash("An unexpected error occurred. Please try again later.", "error")
         return redirect(url_for('password_forgot'))
 
-def process_new_password():
+def new_password_process():
     try:
         # Check if user is verified
         if not session.get("forgot_password_verified"):
