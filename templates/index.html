@@ -2,9 +2,25 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
-<h1>Hi</h1>
-<p1>I am curently testing the github stuff so hopefullt this works
-    huh this now should be test 2
-</p1>
+<header class="home-header">
+    <h1>Welcome to the Home Page</h1>
+    <p>A secure and user-friendly authentication system</p>
+</header>
+
+<div class="features-container">
+    <li class="feature-item">✓ Secure User Authentication</li>
+    <li class="feature-item">✓ Profile Management</li>
+    <li class="feature-item">✓ Password Recovery System</li>
+    <li class="feature-item">✓ Enhanced Security Measures</li>
+
+    <div class="home-actions">
+        {% if not session.get('Username_Login') %}
+            <a href="{{ url_for('login') }}" class="edit-btn">Login</a>
+            <a href="{{ url_for('signup') }}" class="edit-btn">Sign Up</a>
+        {% else %}
+            <a href="{{ url_for('user_dashboard') }}" class="edit-btn">Go to Dashboard</a>
+        {% endif %}
+    </div>
+</div>
 
 {% endblock %}

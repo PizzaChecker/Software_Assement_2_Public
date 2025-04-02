@@ -27,6 +27,11 @@
     
     <button type="submit" id="submit-btn">Submit</button>
 
+    <div class="form-links">
+        <a href="{{ url_for('signup') }}" class="auth-link">Sign Up</a>
+        <span class="separator">|</span>
+        <a href="{{ url_for('password_forgot') }}" class="auth-link">Forgot Password?</a>
+    </div>
 </form>
 
 {% endblock %}

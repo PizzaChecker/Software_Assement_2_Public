@@ -9,11 +9,23 @@ body {
 .navbar {
     background-color: #333;          /* Dark grey background for navbar */
     overflow: hidden;                /* Prevent content from spilling outside */
+    display: flex;                  /* Use flexbox for layout */
+    justify-content: space-between;  /* Space out items evenly */
+    padding: 0 20px;                /* Add horizontal padding */
+}
+
+.nav-left {
+    display: flex;                  /* Use flexbox for left side items */
+}
+
+.nav-right {
+    display: flex;                 /* Use flexbox for right side items */
+    margin-left: auto;           /* Push right side items to the right */
 }
 
 /* Style for navigation links */
 .navbar a {
-    float: left;                     /* Make links align horizontally */
+    float: none;                     /* Make links align horizontally */
     display: block;                  /* Make links block-level elements */
     color: white;                    /* White text color */
     text-align: center;              /* Center the text within links */
@@ -219,4 +231,90 @@ body {
 .edit-btn:hover,
 .delete-btn:hover {
     opacity: 0.9;                    /* Slightly reduce opacity on hover */
+}
+
+
+/* Homepage specific styles */
+.home-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.home-header h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.home-header p {
+    color: #666;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.features-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.feature-item {
+    list-style: none;
+    padding: 15px 20px;
+    margin: 10px 0;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    color: #333;
+    font-size: 1.1em;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.feature-item:hover {
+    transform: translateX(10px);
+    background-color: #e9ecef;
+}
+
+.home-actions {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+}
+
+.home-actions a {
+    margin: 0 10px;
+    min-width: 120px;
+    padding: 10px 20px;
+}
+
+/* Form Link Style */
+.form-links {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.auth-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.2s;
+}
+
+.auth-link:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+.separator {
+    margin: 0 10px;
+    color: #ccc;
 }

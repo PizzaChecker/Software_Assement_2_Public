@@ -95,10 +95,11 @@
     <input type="file" id="image" name="image" accept="image/jpeg, image/png" required/>
     
     <button type="submit" id="submit-btn">Submit</button>
-    <!-- Add classs for css style -->
-</form>
-<!-- potentially do a third set of Questions -->
 
-<!-- Could potentially put js here instead of layout.html -->
+    <div class="form-links">
+        <span>Already have an account?</span>
+        <a href="{{ url_for('login') }}" class="auth-link">Login</a>
+    </div>
+</form>
 
 {% endblock %}

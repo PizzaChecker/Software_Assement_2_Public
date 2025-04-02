@@ -14,14 +14,18 @@
     <body>
         <!-- Navigation Bar -->
         <div class="navbar">
-            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
-            <a href="/dashboard" class="{% if request.path in ['/dashboard', '/admin_dashboard'] %}active{% endif %}">Dashboard</a> <!-- Might need to change with admin dashboard -->
-            {% if session.get('Username_Login') %}  <!-- Check if user is logged in -->
-            <a href="/logout" class="{% if request.path == '/logout' %}active{% endif %}">Logout</a>
-            {% else %}
-            <a href="/login" class="{% if request.path == '/login' %}active{% endif %}">Login</a>
-            <a href="/signup" class="{% if request.path == '/signup' %}active{% endif %}">Signup</a>
-            {% endif %}
+            <div class="nav-left">
+                <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+                <a href="/dashboard" class="{% if request.path in ['/dashboard', '/admin_dashboard'] %}active{% endif %}">Dashboard</a>
+            </div>
+            <div class="nav-right">
+                {% if session.get('Username_Login') %}
+                <a href="/logout" class="{% if request.path == '/logout' %}active{% endif %}">Logout</a>
+                {% else %}
+                <a href="/login" class="{% if request.path == '/login' %}active{% endif %}">Login</a>
+                <a href="/signup" class="{% if request.path == '/signup' %}active{% endif %}">Signup</a>
+                {% endif %}
+            </div>
         </div>
         
         <div>
