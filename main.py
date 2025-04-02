@@ -48,7 +48,7 @@ from datetime import timedelta
 
 from signup import form_signup #imports the signup function
 from login import form_login
-from forgot_password import forgot_password, reset_security_questions, process_new_password
+from forgot_password import forgot_password, reset_security_questions, new_password_process
 from user_dashboard import user_dash
 from admin_dashboard import admin_dash, verify_admin_pin
 from user_change import user_edit, user_delete
@@ -203,7 +203,7 @@ def new_password():
 
 @app.route("/process_new_password", methods=["POST"])
 def process_new_password():
-    return process_new_password()
+    return new_password_process()
 
 @app.route("/dashboard", methods=["GET"]) #changed from user_dashboard. Make it method get?
 def user_dashboard():
@@ -278,8 +278,6 @@ def rate_limit_handler(e):
 def internal_server_error(e):
     app_log.error(f"Internal server error: {e}")
     return render_template('500.html'), 500
-
-
 
 @app.errorhandler(Exception) # Unhandled Exception
 def handle_exception(e):
