@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block title %}Admin Verification{% endblock %}
+{% block content %}
+
+<form action="{{ url_for('admin_verify') }}" method="POST" class="box">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <h2>Admin Verification</h2>
+    <p>Please enter the 6-digit PIN</p>
+    <p>Expires in 2 minutes</p>
+    
+    <label for="pin">PIN</label>
+    <input 
+        type="text" 
+        id="pin" 
+        name="pin" 
+        pattern="[0-9]{6}" 
+        maxlength="6" 
+        required
+        inputmode="numeric"
+    />
+    <!-- Add pin validation in js and xss -->
+    <button type="submit" id="submit-btn">Verify</button>
+</form>
+
+{% endblock %}

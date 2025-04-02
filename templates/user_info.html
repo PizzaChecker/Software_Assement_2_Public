@@ -1,0 +1,21 @@
+<div class="user-info">
+    <div class="profile-picture-container">
+        {% if profile_image %}
+            <img src="{{ url_for('static', filename='uploads/' + profile_image) }}" alt="Profile Picture" class="profile-picture" onerror="this.onerror=null; this.src='/static/uploads/Default_pfp.jpg';"><!-- tried to put jinga here put pops up with errors in pylance -->
+        {% else %}
+            <img src="{{ url_for('static', filename='uploads/Default_pfp.jpg') }}" alt="Profile Picture" class="profile-picture">
+        {% endif %} 
+    </div>
+    
+    <div class="user-details">
+        {% if user_data %}
+        <p><strong>Username:</strong> {{ user_data.username }}</p>
+        <p><strong>Mobile:</strong> {{ user_data.mobile }}</p>
+        <p><strong>Address:</strong> {{ user_data.address }}</p>
+        <p><strong>Security Question 1:</strong> {{ user_data.security_question_1 }}?</p>
+        <p><strong>Security Question 2:</strong> {{ user_data.security_question_2 }}?</p>
+        {% else %}
+        <h2>No User Data Available</h2>
+        {% endif %}
+    </div>
+</div>

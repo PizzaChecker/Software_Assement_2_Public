@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}Method Not Allowed{% endblock %}
+
+{% block content %}
+    <h1>Method Not Allowed</h1>
+    <p>The method you are trying to use is not allowed for this URL.</p>
+    <p><a href="{{ url_for('index') }}">Go home instead</a></p>
+{% endblock %}

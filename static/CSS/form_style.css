@@ -1,0 +1,113 @@
+/* Main form container - Centers and styles the form box */
+.box {
+    max-width: 500px;          /* Limits form width for readability */
+    margin: 50px auto;         /* Centers form and adds top/bottom spacing */
+    padding: 20px;             /* Inner spacing around form content */
+    background-color: #fff;    /* White background for form */
+    border-radius: 10px;       /* Rounds all corners of the form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Adds subtle depth to form */
+}
+
+/* Label styling for form fields */
+label {
+    display: block;            /* Makes labels take full width */
+    margin-bottom: 5px;        /* Space between label and its input */
+    margin-top: 20px;         /* Space above each label */
+    font-weight: bold;        /* Makes label text bold */
+}
+
+/* Special case for first label to reduce top margin */
+.label_top {
+    margin-top: 5px;          /* Reduces space above first label */
+}
+
+/* Common styling for all input fields */
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;              /* Makes inputs full width of container */
+    padding: 10px;            /* Inner spacing in inputs */
+    margin-bottom: 5px;       /* Space between inputs */
+    border: 1px solid #ccc;   /* Light gray border around inputs */
+    border-radius: 7px;       /* Rounds corners of inputs */
+    box-sizing: border-box;   /* Includes padding in width calculation */
+    height: 40px;             /* Consistent height for all inputs */
+}
+
+/* Specific styling for textarea elements */
+textarea {
+    height: 50px;             /* Custom height for text areas */
+}
+
+/* Styling for file upload inputs */
+input[type="file"] {
+    width: 100%;              /* Full width for file inputs */
+    padding: 10px;            /* Inner spacing */
+    margin-bottom: 16px;      /* More space below file inputs */
+    border: 1px solid #ccc;   /* Light border */
+    border-radius: 7px;       /* Rounded corners */
+    box-sizing: border-box;   /* Include padding in width */
+    height: 40px;             /* Match height with other inputs */
+    cursor: pointer;          /* Hand cursor on hover */
+}
+
+/* Submit button styling */
+#submit-btn {
+    background-color: #4CAF50;  /* Green background */
+    color: white;               /* White text */
+    border: none;               /* Removes default border */
+    padding: 10px;              /* Inner spacing */
+    border-radius: 5px;         /* Rounded corners */
+    cursor: pointer;            /* Hand cursor on hover */
+    width: 100%;                /* Full width button */
+    font-size: 16px;            /* Text size */
+}
+
+/* Submit button hover effect */
+#submit-btn:hover {
+    background-color: #45a049;  /* Darker green on hover */
+}
+
+/* Container for validation requirements */
+.input-container {
+    position: relative;         /* For positioning validation messages */
+}
+
+/* Validation requirements styling */
+.requirements {
+    display: none;             /* Hidden by default */
+    margin-top: 1px;           /* Space from input */
+    margin-left: 13px;         /* Indent requirements list */
+    padding: 5px;              /* Space around text */
+    list-style-type: disc;     /* Bullet points */
+    color: red;                /* Error text color */
+    font-size: 14px;           /* Smaller text size */
+}
+
+/* Action buttons container */
+.action-buttons {
+    display: flex;             /* Horizontal layout */
+    gap: 15px;                 /* Space between buttons */
+    margin-top: 20px;          /* Space above buttons */
+}
+
+/* Cancel/Delete button styling */
+.action-buttons .delete-btn {
+    background-color: #dc3545;  /* Red background */
+    color: white;               /* White text */
+    border: none;               /* No border */
+    padding: 10px;              /* Inner spacing */
+    border-radius: 5px;         /* Rounded corners */
+    cursor: pointer;            /* Hand cursor */
+    width: 100%;                /* Full width */
+    font-size: 16px;            /* Text size */
+    text-decoration: none;      /* Remove underline */
+    text-align: center;         /* Center text */
+}
+
+/* Cancel/Delete button hover effect */
+.action-buttons .delete-btn:hover {
+    background-color: #c82333;  /* Darker red on hover */
+}

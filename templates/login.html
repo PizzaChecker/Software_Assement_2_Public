@@ -1,0 +1,32 @@
+{% extends 'layout.html' %} 
+{% block title %}Login{% endblock %}
+{% block content %}
+<h1>Login</h1>
+
+<form action="{{ url_for('login') }}" method="POST" class="box" id="login_form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <span id="password-error-message" style="color: red"></span>
+    
+    <label class ="label_top" for="username">Username</label>
+    <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        pattern="^[a-zA-Z0-9_]{3,9}$"
+        oninput="this.value = this.value.replace(/\s/g, '')"
+    />
+
+    <label for="password">Password</label>
+    <input
+        type="password" 
+        id="password" 
+        name="password" 
+        required
+    />
+    
+    <button type="submit" id="submit-btn">Submit</button>
+
+</form>
+
+{% endblock %}

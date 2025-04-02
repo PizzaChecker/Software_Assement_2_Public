@@ -1,0 +1,104 @@
+{% extends 'layout.html' %}
+{% block title %}Signup{% endblock %}
+{% block content %}
+
+<form action="{{ url_for('signup') }}" method="POST" class="box" id="reg-form" enctype="multipart/form-data">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <span id="login-error-message" style="color: red"></span>
+
+    <label class="label_top" for="username">Username</label>
+    <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Enter username (e.g., john_123)"
+        required
+        pattern="^[a-zA-Z0-9_]{3,9}$"
+        oninput="this.value = this.value.replace(/\s/g, '')"
+        onfocus="showRequirements('username-requirements')"
+        onblur="hideRequirements('username-requirements')"
+    />
+    <ul id="username-requirements" class="requirements">
+        <li>Must be 3-9 characters long</li>
+        <li>Can only contain letters (a-z), numbers (0-9), and underscores (_)</li>
+        <li>No spaces allowed</li>
+    </ul>
+    <span id="username-error-message" style="color: red"></span>
+
+    <label for="password">Password</label>
+    <input
+        type="password" 
+        id="password" 
+        name="password"
+        placeholder="Enter secure password" 
+        required
+        onfocus="showRequirements('password-requirements')"
+        onblur="hideRequirements('password-requirements')"
+    />
+    <ul id="password-requirements" class="requirements">
+        <li>Must be 8-20 characters long</li>
+        <li>Must contain at least one uppercase letter</li>
+        <li>Must contain at least one lowercase letter</li>
+        <li>Must contain at least one digit</li>
+        <li>Must contain at least one special character (@$!%*?&)</li>
+        <li>No spaces allowed</li>
+    </ul>
+    <span id="password-error-message" style="color: red"></span>
+    
+    <label for="mobile">Mobile Number</label>
+    <input
+        type="tel"
+        id="mobile"
+        name="mobile"
+        pattern="^[0-9]{10}$"
+        placeholder="Enter 10-digit mobile number"
+        required
+        oninput="this.value = this.value.replace(/\s/g, '')"
+        onfocus="showRequirements('mobile-requirements')"
+        onblur="hideRequirements('mobile-requirements')"
+    />
+    <ul id="mobile-requirements" class="requirements">
+        <li>Must be exactly 10 digits</li>
+        <li>No spaces allowed</li>
+    </ul>
+    <span id="mobile-error-message" style="color: red"></span>
+    
+    <label for="address">Address</label>
+    <textarea id="address" name="address" placeholder="Example: 123 Main Street, Sydney NSW 2000" required></textarea>
+
+    <!-- Security Questions -->
+    <label for="security-question-1">Select Security Question 1:</label>
+    <select id="security-question-1" name="security_question_1" required>
+        <option value="" disabled selected>Select a question</option>
+        <option value="What is the name of your first pet">What is the name of your first pet?</option>
+        <option value="What is your mothers maiden name">What is your mother's maiden name?</option>
+        <option value="In what city were you born">In what city were you born?</option>
+        <option value="What is your favorite color">What is your favorite color?</option>
+    </select>
+
+    <label for="answer-1">Answer to Question 1:</label>
+    <input type="text" id="security-answer-1" name="security_answer_1" required />
+
+    <label for="security-question-2">Select Security Question 2:</label>
+    <select id="security-question-2" name="security_question_2" required>
+        <option value="" disabled selected>Select a question</option>
+        <option value="What high school did you attend">What high school did you attend?</option>
+        <option value="What was the make of your first car">What was the make of your first car?</option>
+        <option value="What was the name of your best friend in high school">What was the name of your best friend in high school?</option>
+        <option value="What is your favorite food">What is your favorite food?</option>
+    </select>
+
+    <label for="answer-2">Answer to Question 2:</label>
+    <input type="text" id="security-answer-2" name="security_answer_2" required />
+
+    <label for="image">Profile Image</label>
+    <input type="file" id="image" name="image" accept="image/jpeg, image/png" required/>
+    
+    <button type="submit" id="submit-btn">Submit</button>
+    <!-- Add classs for css style -->
+</form>
+<!-- potentially do a third set of Questions -->
+
+<!-- Could potentially put js here instead of layout.html -->
+
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block title %}Error{% endblock %}
+{% block content %}
+    <h1>An Error has occured</h1>
+    <p>Oops... an error has occured, sorry!<br>Please try again at a later time while we try to fix this</p>
+    <p><a href="{{ url_for('index') }}">Go home instead</a>
+{% endblock %}

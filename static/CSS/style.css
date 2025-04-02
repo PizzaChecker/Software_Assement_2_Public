@@ -1,0 +1,222 @@
+/* Set default font and remove default spacing for the entire page */
+body {
+    font-family: Arial, sans-serif;  /* Use Arial font, fallback to any sans-serif */
+    margin: 0;                       /* Remove default outer spacing */
+    padding: 0;                      /* Remove default inner spacing */
+}
+
+/* Navigation bar container styling */
+.navbar {
+    background-color: #333;          /* Dark grey background for navbar */
+    overflow: hidden;                /* Prevent content from spilling outside */
+}
+
+/* Style for navigation links */
+.navbar a {
+    float: left;                     /* Make links align horizontally */
+    display: block;                  /* Make links block-level elements */
+    color: white;                    /* White text color */
+    text-align: center;              /* Center the text within links */
+    padding: 14px 16px;              /* Add space around link text (top/bottom, left/right) */
+    text-decoration: none;           /* Remove underline from links */
+}
+
+/* Hover effect for navigation links */
+.navbar a:hover {
+    background-color: #ddd;          /* Light grey background when hovering */
+    color: black;                    /* Black text when hovering */
+}
+
+/* Style for the active/current navigation link */
+.navbar a.active {
+    background-color: #4CAF50;       /* Green background for active link */
+    color: white;                    /* White text for active link */
+}
+
+/* Main content container styling */
+.container {
+    padding: 20px;                   /* Add space inside the container */
+}
+
+/* Profile picture container styling */
+.profile-picture-container {
+    width: 150px;                    /* Set the desired width */
+    height: 150px;                   /* Set the desired height */
+    overflow: hidden;                /* Hide overflow */
+    border-radius: 50%;              /* Make the container circular */
+    display: flex;                   /* Center the image */
+    justify-content: center;         /* Center the image */
+    align-items: center;             /* Center the image */
+    background-color: #f0f0f0;       /* Optional: background color */
+}
+
+/* Profile picture styling */
+.profile-picture {
+    width: 100%;                     /* Stretch to fill the width of the container */
+    height: 100%;                    /* Stretch to fill the height of the container */
+    object-fit: cover;               /* Maintain aspect ratio and cover the container */
+    display: block;                  /* Remove bottom space in some browsers */
+}
+
+/* Dashboard header styling */
+.dashboard-header {
+    margin-bottom: 20px;             /* Add space below the header */
+    padding: 15px;                   /* Add space inside the header */
+    background-color: #f8f9fa;       /* Light grey background */
+    border-radius: 8px;              /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Dashboard stats container styling */
+.dashboard-stats {
+    display: grid;                   /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px;                       /* Space between grid items */
+    margin-bottom: 30px;             /* Add space below the stats */
+    padding-top: 10px;               /* Add space above the stats */
+}
+
+/* Individual stat card styling */
+.stat-card {
+    background: white;               /* White background */
+    padding: 15px;                   /* Add space inside the card */
+    border-radius: 8px;              /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    text-align: center;              /* Center text inside the card */
+}
+
+/* Stat card title styling */
+.stat-card h3 {
+    margin: 0;                       /* Remove default margin */
+    color: #666;                     /* Grey text color */
+    font-size: 0.9em;                /* Slightly smaller font size */
+}
+
+/* Stat card number styling */
+.stat-card .number {
+    font-size: 2em;                  /* Large font size */
+    color: #4CAF50;                  /* Green text color */
+    font-weight: bold;               /* Bold text */
+}
+
+/* User dashboard info container styling */
+.user-info {
+    display: grid;                   /* Use grid layout */
+    grid-template-columns: auto 1fr; /* Two columns: auto width and flexible width */
+    gap: 30px;                       /* Space between columns */
+    padding: 20px;                   /* Add space inside the container */
+    background: white;               /* White background */
+    border-radius: 8px;              /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* User details container styling */
+.user-details {
+    display: grid;                   /* Use grid layout */
+    gap: 10px;                       /* Space between grid items */
+}
+
+/* User details paragraph styling */
+.user-details p {
+    margin: 5px 0;                   /* Add space above and below paragraphs */
+    padding: 8px;                    /* Add space inside paragraphs */
+    background: #f8f9fa;             /* Light grey background */
+    border-radius: 4px;              /* Rounded corners */
+}
+
+/* Admin dashboard controls container styling */
+.admin-controls {
+    margin-bottom: 30px;             /* Add space below the controls */
+}
+
+/* Search form container styling */
+.search-form {
+    display: flex;                   /* Use flexbox layout */
+    gap: 10px;                       /* Space between form elements */
+    margin-bottom: 20px;             /* Add space below the form */
+    align-items: center;             /* Vertically align items */
+}
+
+/* Search form input styling */
+.search-form input[type="text"] {
+    flex: 1;                         /* Make input take up available space */
+    padding: 10px;                   /* Add space inside the input */
+    border: 1px solid #ddd;          /* Light grey border */
+    border-radius: 4px;              /* Rounded corners */
+    height: 36px;                    /* Set fixed height */
+    box-sizing: border-box;          /* Include padding in height calculation */
+}
+
+/* Search form button styling */
+.search-form button {
+    height: 36px;                    /* Match height with input */
+    padding: 0 16px;                 /* Horizontal padding only */
+    line-height: 36px;               /* Center text vertically */
+    margin: -5px 0 0 0;              /* Lift button up by 2px */
+}
+
+/* User table styling */
+.user-table {
+    width: 100%;                     /* Full width */
+    border-collapse: collapse;       /* Remove space between table borders */
+    background: white;               /* White background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 8px;              /* Rounded corners */
+    overflow: hidden;                /* Hide overflow */
+}
+
+/* User table header and cell styling */
+.user-table th,
+.user-table td {
+    padding: 12px 15px;              /* Add space inside cells */
+    text-align: left;                /* Align text to the left */
+    border-bottom: 1px solid #ddd;   /* Light grey border below cells */
+}
+
+/* User table header styling */
+.user-table th {
+    background-color: #f8f9fa;       /* Light grey background */
+    font-weight: bold;               /* Bold text */
+}
+
+/* User table row hover effect */
+.user-table tr:hover {
+    background-color: #f5f5f5;       /* Light grey background on hover */
+}
+
+/* Action buttons container styling */
+.action-buttons {
+    display: flex;                   /* Use flexbox layout */
+    gap: 8px;                        /* Space between buttons */
+}
+
+/* Action buttons styling */
+.action-buttons a,
+.action-buttons button {
+    padding: 6px 12px;               /* Add space inside buttons */
+    border-radius: 4px;              /* Rounded corners */
+    text-decoration: none;           /* Remove underline from links */
+    border: none;                    /* Remove border */
+    cursor: pointer;                 /* Change cursor to pointer */
+    font-size: 0.9em;                /* Slightly smaller font size */
+}
+
+/* Edit button styling */
+.edit-btn {
+    background-color: #4CAF50;       /* Green background */
+    color: white;                    /* White text */
+    border-radius: 6px;              /* Rounded corners */
+}
+
+/* Delete button styling */
+.delete-btn {
+    background-color: #dc3545;       /* Red background */
+    color: white;                    /* White text */
+    border-radius: 6px;              /* Rounded corners */
+}
+
+/* Hover effect for edit and delete buttons */
+.edit-btn:hover,
+.delete-btn:hover {
+    opacity: 0.9;                    /* Slightly reduce opacity on hover */
+}

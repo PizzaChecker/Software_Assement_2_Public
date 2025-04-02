@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- add all the meta stuff and style sheet here -->
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/static/CSS/style.css">
+        <link rel="stylesheet" href="/static/CSS/form_style.css">
+        <link rel="stylesheet" href="/static/CSS/flash_messages.css">
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="/dashboard" class="{% if request.path in ['/dashboard', '/admin_dashboard'] %}active{% endif %}">Dashboard</a> <!-- Might need to change with admin dashboard -->
+            {% if session.get('Username_Login') %}  <!-- Check if user is logged in -->
+            <a href="/logout" class="{% if request.path == '/logout' %}active{% endif %}">Logout</a>
+            {% else %}
+            <a href="/login" class="{% if request.path == '/login' %}active{% endif %}">Login</a>
+            <a href="/signup" class="{% if request.path == '/signup' %}active{% endif %}">Signup</a>
+            {% endif %}
+        </div>
+        
+        <div>
+            {% with messages = get_flashed_messages(with_categories=True) %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <div class="flash-message {{ category }}">
+                                {{ message | e }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+
+        <script src="/static/JS/form_validation.js"></script>
+        <script src="/static/JS/colour_change_val.js"></script>
+    </body>
+</html>

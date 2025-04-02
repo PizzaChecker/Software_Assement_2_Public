@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}Error{% endblock %}
+
+{% block content %}
+    {% if error == "Unauthorised access" %}
+        <h1>Unauthorised Access</h1>
+        <p>You currently do not have permission to access this page.</p>
+        <p><a href="{{ url_for('index') }}">Go home instead</a></p>
+
+    {% elif error == "Access is forbidden" %}
+        <h1>Access is Forbidden</h1>
+        <p>You are currently not permitted to access this page.</p>
+        <p><a href="{{ url_for('index') }}">Go home instead</a></p>
+
+    {% else %}
+        <h1>Something went wrong</h1>
+        <p>An unexpected error occurred. Please try again later.</p>
+        <p><a href="{{ url_for('index') }}">Go home instead</a></p>
+    {% endif %}
+    
+{% endblock %}

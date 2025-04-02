@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block title %}Edit User{% endblock %}
+{% block content %}
+
+<div class="dashboard-header">
+    <h1>Edit User</h1>
+</div>
+
+<form method="POST" class="box">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    
+    <label for="username"><strong>Username:</strong></label>
+    <input type="text" name="username" id="username" value="{{ user_data.username | e}}" required>
+    <span id="username-error-message" style="color: red"></span>
+
+    <label for="mobile"><strong>Mobile:</strong></label>
+    <input type="tel" name="mobile" id="mobile" value="{{ user_data.mobile | e}}">
+    <span id="mobile-error-message" style="color: red"></span>
+    
+    <label for="privilege_id"><strong>Role:</strong></label>
+    <select name="privilege_id">
+        <option value="1" {% if user_data.privilege_id == 1 %}selected{% endif %}>User</option>
+        <option value="2" {% if user_data.privilege_id == 2 %}selected{% endif %}>Admin</option>
+    </select>
+    
+    <div class="action-buttons">
+        <button type="submit" id="submit-btn">Update User</button>
+        <a href="{{ url_for('admin_dashboard') }}" class="delete-btn">Cancel</a>
+    </div>
+</form>
+
+<script>
+    // Release lock when user leaves page
+    window.addEventListener('beforeunload', function(e) {
+        fetch('/release_lock/{{ user_data.id }}', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token() }}'
+            }
+        }).catch(err => console.error('Error releasing lock:', err));
+    });
+</script>
+
+{% endblock %}

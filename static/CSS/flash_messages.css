@@ -1,0 +1,80 @@
+/* Container for all flash messages */
+.flash-messages {
+    width: 100%;              /* Take full width of parent */
+    margin: 10px 0;          /* Add vertical spacing */
+    padding: 0 20px;         /* Add horizontal padding */
+    box-sizing: border-box;  /* Include padding in width calculation */
+}
+
+/* Individual flash message styling */
+.flash-message {
+    padding: 12px 20px;      /* Inner spacing for message */
+    margin: 8px 0;           /* Vertical gap between messages */
+    border-radius: 4px;      /* Rounded corners */
+    position: relative;      /* Required for potential absolute positioning of children */
+    animation: slidein 0.5s ease-in-out;  /* Smooth entrance animation */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Subtle shadow for depth */
+}
+
+/* Animation keyframes for message entrance */
+@keyframes slidein {
+    from { 
+        transform: translateY(-20px);  /* Start 20px above final position */
+        opacity: 0;                    /* Start fully transparent */
+    }
+    to {
+        transform: translateY(0);      /* Move to final position */
+        opacity: 1;                    /* Become fully visible */
+    }
+}
+
+/* Success message style */
+.success {
+    background-color: #d4edda;  /* Light green background */
+    color: #155724;            /* Dark green text */
+    border: 1px solid #c3e6cb; /* Slightly darker green border */
+}
+
+/* Error message style */
+.error {
+    background-color: #f8d7da;  /* Light red background */
+    color: #721c24;            /* Dark red text */
+    border: 1px solid #f5c6cb; /* Slightly darker red border */
+}
+
+/* Warning message style */
+.warning {
+    background-color: #fff3cd;  /* Light yellow background */
+    color: #856404;            /* Dark yellow/brown text */
+    border: 1px solid #ffeeba; /* Slightly darker yellow border */
+}
+
+/* Info message style */
+.info {
+    background-color: #d1ecf1;  /* Light blue background */
+    color: #0c5460;            /* Dark blue text */
+    border: 1px solid #bee5eb; /* Slightly darker blue border */
+}
+
+/* Common styles for icons before messages */
+.success:before, .error:before, .warning:before, .info:before {
+    font-weight: bold;         /* Make icons bold */
+    margin-right: 8px;        /* Space between icon and text */
+}
+
+/* Individual icon definitions using Unicode characters */
+.success:before {
+    content: "✔";             /* Checkmark icon */
+}
+
+.error:before {
+    content: "✖";             /* X icon */
+}
+
+.warning:before {
+    content: "⚠";             /* Warning triangle icon */
+}
+
+.info:before {
+    content: "ℹ";             /* Information icon */
+}
